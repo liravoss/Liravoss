@@ -315,6 +315,50 @@ body{background:var(--deep2);color:var(--text);font-family:'Rajdhani',sans-serif
   .section-head{padding:60px 20px 20px;}
 }
 
+/* Mobile responsiveness */
+@media(max-width:600px){
+  .intro-name{font-size:clamp(1.5rem,8vw,3rem);}
+  .intro-handle{font-size:12px;}
+  .intro-bar-wrap{width:250px;}
+  .intro-enter{padding:10px 24px;font-size:10px;}
+  .hero-tag{font-size:10px;padding:4px 12px;}
+  .works-title{font-size:clamp(3rem,12vw,8rem);}
+  .hero-sub{font-size:0.9rem;}
+  .section-head{padding:40px 20px 20px;}
+  .card-body{padding:20px;}
+  .card-num{font-size:2.5rem;}
+  .card-title{font-size:1.2rem;}
+  .card-desc{font-size:0.8rem;max-width:100%;}
+  .about{flex-direction:column;text-align:center;gap:20px;padding:40px 20px;}
+  .about-links{margin-left:0;justify-content:center;}
+  footer{padding:20px;}
+}
+
+@media(max-width:480px){
+  .intro-pfp{width:80px;height:80px;}
+  .intro-name{font-size:clamp(1.2rem,10vw,2.5rem);letter-spacing:4px;}
+  .intro-bar-wrap{width:200px;}
+  .intro-enter{margin-top:24px;padding:8px 20px;font-size:9px;}
+  .hero{padding:40px 20px;}
+  .hero-pfp{width:70px;height:70px;}
+  .works-title{font-size:clamp(2.5rem,15vw,6rem);}
+  .hero-sub{margin-top:16px;}
+  .projects{gap:1px;}
+  .card-body{padding:16px;}
+  .card-num{font-size:2rem;top:12px;right:16px;}
+  .card-icon{width:36px;height:36px;margin-bottom:8px;}
+  .card-title{font-size:1.1rem;margin-bottom:6px;}
+  .card-desc{margin-bottom:10px;}
+  .card-chips{margin-bottom:10px;}
+  .card-links{gap:6px;}
+  .card-link{padding:5px 10px;font-size:9px;}
+  .about-pfp{width:60px;height:60px;}
+  .about-name{font-size:1rem;}
+  .about-mail{font-size:10px;}
+  .about-links{gap:6px;}
+  .about-link{padding:6px 12px;font-size:9px;}
+}
+
 /* ── CARD ── */
 .card{
   position:relative;overflow:hidden;aspect-ratio:16/10;cursor:pointer;
@@ -711,6 +755,13 @@ footer{
 </div>
 
 <script>
+// ── Keyboard Enter support ──
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') {
+    enterSite();
+  }
+});
+
 // ── Intro bar steps ──
 const steps = ['LOADING ASSETS...','COMPILING SHADERS...','CONNECTING NODES...','RENDERING SCENES...','PROJECTS READY'];
 let si = 0;
